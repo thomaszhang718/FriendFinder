@@ -33,7 +33,11 @@ module.exports = function(app){
 
 	app.post('/api/friends', function(req, res){
 
+
+
+
 		//Store the answers from the user and their choice
+
 		var userPicks = req.body.scores;
 
 		//Create an array that will store the total difference for each of the 5 possible friends
@@ -69,6 +73,8 @@ module.exports = function(app){
 
 		//console.log(friendsArr[minIndex].name);
 		//console.log(friendsArr[minIndex].photo);
+
+		friendsArr.push(req.body);
 
 		//Send the object for the friend that's the best match we just calculated as the response
 		res.json(friendsArr[minIndex]);
